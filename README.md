@@ -1,5 +1,7 @@
 # Using TAMU AI models in coding tools
 
+**Texas A&M students can use any coding harness for their projects and courses, and code efficiently for free.** Your NetID already gives you access to Claude, GPT and Gemini models through TAMUS AI — this guide shows you how to plug them into the tools you actually code in.
+
 A step-by-step guide to using the Texas A&M AI Chat API from coding assistants ("harnesses"). Right now it covers GitHub Copilot Chat in VS Code; other harnesses will be added later.
 
 This is an unofficial guide. It is not maintained by Texas A&M Technology Services.
@@ -45,80 +47,31 @@ You should get a JSON reply containing the model's answer. If you get a 401, the
 
 Copy the model ID exactly as written. IDs are case-sensitive, always start with `protected.`, and some contain spaces while others use hyphens (`protected.Claude Opus 4.8` but `protected.Claude-Opus-5`).
 
-Only the two models marked "Tested" have been tried in a harness for this guide. The rest are listed as the API reports them.
-
-### Anthropic
-
-| Model ID | Name | Tested in Copilot |
-|---|---|---|
-| `protected.Claude-Opus-5` | Claude Opus 5 | Tested |
-| `protected.Claude-Sonnet-5` | Claude Sonnet 5 | Tested |
-| `protected.Claude Opus 4.8` | Claude Opus 4.8 | |
-| `protected.Claude Opus 4.7` | Claude Opus 4.7 | |
-| `protected.Claude Opus 4.6` | Claude Opus 4.6 | |
-| `protected.Claude Opus 4.5` | Claude Opus 4.5 | |
-| `protected.Claude Opus 4.1` | Claude Opus 4.1 | |
-| `protected.Claude Sonnet 4.6` | Claude Sonnet 4.6 | |
-| `protected.Claude Sonnet 4.5` | Claude Sonnet 4.5 | |
-| `protected.Claude Sonnet 4` | Claude Sonnet 4 | |
-| `protected.Claude-Haiku-4.5` | Claude Haiku 4.5 | |
-| `protected.Claude 3.5 Haiku` | Claude 3.5 Haiku | |
-
-### OpenAI
+**Start with these two** — they are the ones tested in a harness for this guide:
 
 | Model ID | Name |
 |---|---|
-| `protected.gpt-5.6-sol` | GPT-5.6 Sol |
-| `protected.gpt-5.6-terra` | GPT-5.6 Terra |
-| `protected.gpt-5.6-luna` | GPT-5.6 Luna |
-| `protected.gpt-5.5` | GPT-5.5 |
-| `protected.gpt-5.4` | GPT-5.4 |
-| `protected.gpt-5.4-nano` | GPT-5.4 nano |
-| `protected.gpt-5.2` | GPT-5.2 |
-| `protected.gpt-5.1` | GPT-5.1 |
-| `protected.gpt-5` | GPT-5 |
-| `protected.gpt-5-mini` | GPT-5 mini |
-| `protected.gpt-5-nano` | GPT-5 nano |
-| `protected.gpt-4.1` | GPT-4.1 |
-| `protected.gpt-4.1-mini` | GPT-4.1 mini |
-| `protected.gpt-4.1-nano` | GPT-4.1 nano |
-| `protected.gpt-4o` | GPT-4o |
-| `protected.o3` | o3 |
-| `protected.o3-mini` | o3-mini |
-| `protected.o4-mini` | o4-mini |
+| `protected.Claude-Opus-5` | Claude Opus 5 |
+| `protected.Claude-Sonnet-5` | Claude Sonnet 5 |
 
-### Google
+<details>
+<summary><strong>Full model catalog</strong> (click to expand)</summary>
 
-| Model ID | Name |
-|---|---|
-| `protected.gemini-3.5-flash` | Gemini 3.5 Flash |
-| `protected.gemini-3.1-flash-lite` | Gemini 3.1 Flash-Lite |
-| `protected.gemini-2.5-pro` | Gemini 2.5 Pro |
-| `protected.gemini-2.5-flash` | Gemini 2.5 Flash |
-| `protected.gemini-2.5-flash-lite` | Gemini 2.5 Flash-Lite |
+Listed as the API reported them on 2 October 2026. Untested in a harness.
 
-### Meta
+**Anthropic** — `protected.Claude Opus 4.8`, `protected.Claude Opus 4.7`, `protected.Claude Opus 4.6`, `protected.Claude Opus 4.5`, `protected.Claude Opus 4.1`, `protected.Claude Sonnet 4.6`, `protected.Claude Sonnet 4.5`, `protected.Claude Sonnet 4`, `protected.Claude-Haiku-4.5`, `protected.Claude 3.5 Haiku`
 
-| Model ID | Name |
-|---|---|
-| `protected.llama3.2` | Llama 3.2 |
+**OpenAI** — `protected.gpt-5.6-sol`, `protected.gpt-5.6-terra`, `protected.gpt-5.6-luna`, `protected.gpt-5.5`, `protected.gpt-5.4`, `protected.gpt-5.4-nano`, `protected.gpt-5.2`, `protected.gpt-5.1`, `protected.gpt-5`, `protected.gpt-5-mini`, `protected.gpt-5-nano`, `protected.gpt-4.1`, `protected.gpt-4.1-mini`, `protected.gpt-4.1-nano`, `protected.gpt-4o`, `protected.o3`, `protected.o3-mini`, `protected.o4-mini`
 
-### Not chat models
+**Google** — `protected.gemini-3.5-flash`, `protected.gemini-3.1-flash-lite`, `protected.gemini-2.5-pro`, `protected.gemini-2.5-flash`, `protected.gemini-2.5-flash-lite`
 
-These generate images or embeddings. They do not belong in a coding assistant's model picker.
+**Meta** — `protected.llama3.2`
 
-| Model ID | Type |
-|---|---|
-| `protected.gpt-image-2` | Image generation |
-| `protected.gpt-image-1.5` | Image generation |
-| `protected.gpt-image-1-mini` | Image generation |
-| `protected.gemini-3.1-flash-image` | Image generation |
-| `protected.gemini-3.1-flash-lite-image` | Image generation |
-| `protected.text-embedding-3-small` | Embeddings |
+**Not chat models** (image generation and embeddings — do not add these to a coding assistant) — `protected.gpt-image-2`, `protected.gpt-image-1.5`, `protected.gpt-image-1-mini`, `protected.gemini-3.1-flash-image`, `protected.gemini-3.1-flash-lite-image`, `protected.text-embedding-3-small`
 
-### Getting the current list
+</details>
 
-This list was taken from the API on 2 October 2026 and may be incomplete. The catalog changes, so check it yourself:
+The catalog changes, so check it yourself:
 
 ```sh
 curl -s https://chat-api.tamu.ai/openai/models \
@@ -130,10 +83,10 @@ To use another model, copy its `id` from that output into the config for your ha
 
 ## Harnesses
 
-| Harness | Status | Config in this repo |
-|---|---|---|
-| GitHub Copilot Chat (VS Code) | Working | [github-copilot/chatLanguageModels.json](github-copilot/chatLanguageModels.json) |
-| Others | Not written yet | |
+| Harness | Get the harness | Status | Config in this repo |
+|---|---|---|---|
+| GitHub Copilot Chat (VS Code) | [Free for students](https://github.com/education/students) · [VS Code](https://code.visualstudio.com/) | Working | [github-copilot/chatLanguageModels.json](github-copilot/chatLanguageModels.json) |
+| Others | | Not written yet | |
 
 ## GitHub Copilot Chat in VS Code
 
@@ -144,7 +97,7 @@ Tested with VS Code 1.139 on macOS.
 ### What you need
 
 - A recent version of VS Code.
-- To be signed in to GitHub Copilot in VS Code. The free Copilot plan is enough. If your Copilot seat comes from an organisation, an admin may need to allow custom models.
+- To be signed in to GitHub Copilot in VS Code. The free plan is enough — students can also get Copilot Pro free through the [GitHub Student Developer Pack](https://github.com/education/students). If your Copilot seat comes from an organisation, an admin may need to allow custom models.
 - A TAMU AI API key that passes the curl check above.
 
 ### Steps
@@ -188,16 +141,13 @@ Tested with VS Code 1.139 on macOS.
 
 **Use the full URL, not the base URL.** If `url` is `https://chat-api.tamu.ai/openai`, VS Code turns it into `https://chat-api.tamu.ai/openai/v1/chat/completions`, which TAMU rejects. Ending the URL in `/chat/completions` stops VS Code from changing it.
 
-### Troubleshooting
+### If something goes wrong
 
-| What you see | Cause | Fix |
-|---|---|---|
-| `token expired or invalid: 403` | The URL is the base URL, so VS Code added `/v1`. | Set `url` to the full `/openai/chat/completions` path and reload. |
-| `token expired or invalid: 401` | The stored key is missing or wrong. | Re-enter it through **Chat: Manage Language Models** and the gear icon. |
-| Models missing from the picker | `vendor` is not `customendpoint`, the JSON is invalid, or the models are switched off. | Check the file against the one in this repo, then check **Chat: Manage Language Models**. |
-| Error naming the model | The model ID is misspelled or not available to your key. | Run the `/models` command above and copy the ID exactly. |
+- **`token expired or invalid: 403`** — the `url` is the base URL, so VS Code added `/v1`. Use the full `/openai/chat/completions` path and reload.
+- **`token expired or invalid: 401`** — re-enter your key via **Chat: Manage Language Models** → gear icon.
+- **Models missing from the picker** — check `vendor` is `customendpoint`, the JSON is valid, and the models are switched on.
 
-Copilot shows "token expired or invalid" for any 401 or 403 from any endpoint, so the message does not mean your GitHub login has a problem. To see the real response from TAMU, open the Output panel (`Cmd+Shift+U`), choose **GitHub Copilot Chat** from the dropdown, and look for the line starting with `Server error`.
+Copilot reports any 401 or 403 as "token expired or invalid", so it does not mean your GitHub login is broken. For the real error, open the Output panel (`Cmd+Shift+U`) → **GitHub Copilot Chat** and look for `Server error`.
 
 ## Adding another harness
 
