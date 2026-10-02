@@ -2,13 +2,11 @@
 
 A step-by-step guide to using the Texas A&M AI Chat API from coding assistants ("harnesses"). Right now it covers GitHub Copilot Chat in VS Code; other harnesses will be added later.
 
-This is an unofficial guide written by a student. It is not maintained by Texas A&M Technology Services.
+This is an unofficial guide. It is not maintained by Texas A&M Technology Services.
 
 ## The TAMU AI API
 
-Texas A&M runs TAMUS AI Chat ([tamus.ai](https://tamus.ai)), a university-approved chat platform that gives students, faculty, staff and researchers access to models from OpenAI, Anthropic and Google. The same models are available through an API, so you can use them from your own tools instead of the web chat.
-
-The API is OpenAI-compatible: any tool that can talk to an OpenAI-style "chat completions" endpoint can use it.
+More about the TAMU AI API: [docs.it.tamu.edu/ai](https://docs.it.tamu.edu/ai)
 
 | | |
 |---|---|
