@@ -116,6 +116,8 @@ Tested with VS Code 1.139 on macOS.
 
    If your file already has other providers, add the `TAMU AI` block to the existing list instead of replacing the whole file.
 
+   The file sets up seven models: Claude Sonnet 5, Claude Opus 5, Claude Haiku 4.5, GPT-5.5, GPT-5 mini, Gemini 2.5 Pro and Gemini 3.5 Flash. Only the first two have been tested in Copilot. Delete any entry you do not want, or add another by copying an entry and changing its `id` and `name`.
+
 3. **Reload VS Code.** Press `Cmd+Shift+P` (`Ctrl+Shift+P` on Windows and Linux) and run **Developer: Reload Window**.
 
 4. **Enter your API key.** Press `Cmd+Shift+P` and run **Chat: Manage Language Models**. Find the **TAMU AI** provider, click its gear icon, and paste your key into the API key field.
