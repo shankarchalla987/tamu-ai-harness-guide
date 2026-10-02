@@ -45,21 +45,90 @@ You should get a JSON reply containing the model's answer. If you get a 401, the
 
 ## Models
 
-| Model ID (use this in configs) | Suggested display name | Provider |
+Copy the model ID exactly as written. IDs are case-sensitive, always start with `protected.`, and some contain spaces while others use hyphens (`protected.Claude Opus 4.8` but `protected.Claude-Opus-5`).
+
+Only the two models marked "Tested" have been tried in a harness for this guide. The rest are listed as the API reports them.
+
+### Anthropic
+
+| Model ID | Name | Tested in Copilot |
 |---|---|---|
-| `protected.Claude-Sonnet-5` | Claude Sonnet 5 (TAMU) | Anthropic |
-| `protected.Claude-Opus-5` | Claude Opus 5 (TAMU) | Anthropic |
+| `protected.Claude-Opus-5` | Claude Opus 5 | Tested |
+| `protected.Claude-Sonnet-5` | Claude Sonnet 5 | Tested |
+| `protected.Claude Opus 4.8` | Claude Opus 4.8 | |
+| `protected.Claude Opus 4.7` | Claude Opus 4.7 | |
+| `protected.Claude Opus 4.6` | Claude Opus 4.6 | |
+| `protected.Claude Opus 4.5` | Claude Opus 4.5 | |
+| `protected.Claude Opus 4.1` | Claude Opus 4.1 | |
+| `protected.Claude Sonnet 4.6` | Claude Sonnet 4.6 | |
+| `protected.Claude Sonnet 4.5` | Claude Sonnet 4.5 | |
+| `protected.Claude Sonnet 4` | Claude Sonnet 4 | |
+| `protected.Claude-Haiku-4.5` | Claude Haiku 4.5 | |
+| `protected.Claude 3.5 Haiku` | Claude 3.5 Haiku | |
 
-Model IDs are case-sensitive and include the `protected.` prefix.
+### OpenAI
 
-These are the two models this guide has been set up with. TAMUS AI offers more. To see every model ID your key can use:
+| Model ID | Name |
+|---|---|
+| `protected.gpt-5.6-sol` | GPT-5.6 Sol |
+| `protected.gpt-5.6-terra` | GPT-5.6 Terra |
+| `protected.gpt-5.6-luna` | GPT-5.6 Luna |
+| `protected.gpt-5.5` | GPT-5.5 |
+| `protected.gpt-5.4` | GPT-5.4 |
+| `protected.gpt-5.4-nano` | GPT-5.4 nano |
+| `protected.gpt-5.2` | GPT-5.2 |
+| `protected.gpt-5.1` | GPT-5.1 |
+| `protected.gpt-5` | GPT-5 |
+| `protected.gpt-5-mini` | GPT-5 mini |
+| `protected.gpt-5-nano` | GPT-5 nano |
+| `protected.gpt-4.1` | GPT-4.1 |
+| `protected.gpt-4.1-mini` | GPT-4.1 mini |
+| `protected.gpt-4.1-nano` | GPT-4.1 nano |
+| `protected.gpt-4o` | GPT-4o |
+| `protected.o3` | o3 |
+| `protected.o3-mini` | o3-mini |
+| `protected.o4-mini` | o4-mini |
+
+### Google
+
+| Model ID | Name |
+|---|---|
+| `protected.gemini-3.5-flash` | Gemini 3.5 Flash |
+| `protected.gemini-3.1-flash-lite` | Gemini 3.1 Flash-Lite |
+| `protected.gemini-2.5-pro` | Gemini 2.5 Pro |
+| `protected.gemini-2.5-flash` | Gemini 2.5 Flash |
+| `protected.gemini-2.5-flash-lite` | Gemini 2.5 Flash-Lite |
+
+### Meta
+
+| Model ID | Name |
+|---|---|
+| `protected.llama3.2` | Llama 3.2 |
+
+### Not chat models
+
+These generate images or embeddings. They do not belong in a coding assistant's model picker.
+
+| Model ID | Type |
+|---|---|
+| `protected.gpt-image-2` | Image generation |
+| `protected.gpt-image-1.5` | Image generation |
+| `protected.gpt-image-1-mini` | Image generation |
+| `protected.gemini-3.1-flash-image` | Image generation |
+| `protected.gemini-3.1-flash-lite-image` | Image generation |
+| `protected.text-embedding-3-small` | Embeddings |
+
+### Getting the current list
+
+This list was taken from the API on 2 October 2026 and may be incomplete. The catalog changes, so check it yourself:
 
 ```sh
 curl -s https://chat-api.tamu.ai/openai/models \
-  -H "Authorization: Bearer $TAMU_API_KEY" | python3 -m json.tool
+  -H "Authorization: Bearer $TAMU_API_KEY" \
+  | python3 -c "import json,sys; print('\n'.join(sorted(m['id'] for m in json.load(sys.stdin)['data'])))"
 ```
 
-To use another model, copy its `id` from that list into the config for your harness.
+To use another model, copy its `id` from that output into the config for your harness.
 
 ## Harnesses
 
