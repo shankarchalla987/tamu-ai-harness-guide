@@ -1,4 +1,4 @@
-# Using TAMU AI models in coding tools
+# Using TAMU AI Models in Coding Tools
 
 **Texas A&M students can use any coding harness for their projects and courses, and code efficiently for free.** Your NetID already gives you access to Claude, GPT and Gemini models through TAMUS AI — this guide shows you how to plug them into the tools you actually code in.
 
