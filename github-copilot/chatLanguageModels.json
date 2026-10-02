@@ -1,0 +1,28 @@
+[
+	{
+		"name": "TAMU AI",
+		"vendor": "customendpoint",
+		"apiKey": "${input:tamuApiKey}",
+		"apiType": "chat-completions",
+		"models": [
+			{
+				"id": "protected.Claude-Sonnet-5",
+				"name": "Claude Sonnet 5 (TAMU)",
+				"url": "https://chat-api.tamu.ai/openai/chat/completions",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 16000
+			},
+			{
+				"id": "protected.Claude-Opus-5",
+				"name": "Claude Opus 5 (TAMU)",
+				"url": "https://chat-api.tamu.ai/openai/chat/completions",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 16000
+			}
+		]
+	}
+]
